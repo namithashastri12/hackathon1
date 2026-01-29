@@ -1,0 +1,141 @@
+# Calculate Area of a Square
+import java.util.Scanner;
+
+public class AreaOfSquare {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter side of square: ");
+        double side = sc.nextDouble();
+
+        double area = side * side;
+        System.out.println("Area of square = " + area);
+    }
+}
+
+
+
+# Calculate Simple Interest
+import java.util.Scanner;
+
+public class SimpleInterest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter principal: ");
+        double p = sc.nextDouble();
+
+        System.out.print("Enter rate: ");
+        double r = sc.nextDouble();
+
+        System.out.print("Enter time: ");
+        double t = sc.nextDouble();
+
+        double si = (p * r * t) / 100;
+        System.out.println("Simple Interest = " + si);
+    }
+}
+
+
+
+# Check Whether a Number Is Prime or Not
+import java.util.Scanner;
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        boolean isPrime = true;
+
+        if (num <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime)
+            System.out.println(num + " is a prime number");
+        else
+            System.out.println(num + " is not a prime number");
+    }
+}
+
+
+
+# Print Alternate Prime Numbers (up to N)
+
+
+import java.util.Scanner;
+
+public class AlternatePrimes {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter limit: ");
+        int n = sc.nextInt();
+
+        int count = 0;
+
+        for (int num = 2; num <= n; num++) {
+            boolean isPrime = true;
+
+            for (int i = 2; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                count++;
+                if (count % 2 == 1) { // alternate primes
+                    System.out.print(num + " ");
+                }
+            }
+        }
+    }
+}
+
+
+
+
+# Find Length of a String
+import java.util.Scanner;
+
+public class StringLength {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        System.out.println("Length of string = " + str.length());
+    }
+}
+
+#Bank Service
+public class BankService {
+
+    static class BankAccount {
+        double balance;
+        BankAccount(double b) { balance = b; }
+        void deposit(double a) { balance += a; }
+        void withdraw(double a) { balance -= a; }
+        double getBalance() { return balance; }
+    }
+
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount(5000);
+        acc.deposit(700);
+        acc.withdraw(100);
+        System.out.println(acc.getBalance());
+    }
+}
